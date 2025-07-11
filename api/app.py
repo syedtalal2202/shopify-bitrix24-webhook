@@ -250,7 +250,7 @@ def shopify_webhook():
                 "filter": {"UF_CRM_FACTORYMOTO62": str(order_id)},
                 "select": ["ID"]
             }
-            check_url = BITRIX24_WEBHOOK_URL + "crm.lead.list"
+            check_url = BITRIX24_WEBHOOK_URL + "/crm.lead.list"
             check_response = requests.post(check_url, json=check_payload)
             logging.info(f"crm.lead.list response for order {order_id}: Status {check_response.status_code}, Body {check_response.text}")
             check_response.raise_for_status()
