@@ -263,7 +263,7 @@ def shopify_webhook():
                 lead_id = existing_leads[0]['ID']
                 print(f"Lead already exists for order {order_id}. Updating lead ID {lead_id}...")
                 logging.info(f"Lead already exists for order {order_id}. Updating lead ID {lead_id}")
-                update_url = BITRIX24_WEBHOOK_URL + "crm.lead.update"
+                update_url = BITRIX24_WEBHOOK_URL + "/crm.lead.update"
                 update_payload = {
                     "id": lead_id,
                     "fields": bitrix_payload["fields"]
