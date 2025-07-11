@@ -277,7 +277,7 @@ def shopify_webhook():
             else:
                 print(f"Creating new lead for order {order_id}...")
                 logging.info(f"Creating new lead for order {order_id}")
-                create_url = BITRIX24_WEBHOOK_URL + "crm.lead.add"
+                create_url = BITRIX24_WEBHOOK_URL + "/crm.lead.add"
                 logging.info(f"Sending create payload for order {order_id}: {bitrix_payload}")
                 response = requests.post(create_url, json=bitrix_payload)
                 logging.info(f"crm.lead.add response for order {order_id}: Status {response.status_code}, Body {response.text}")
